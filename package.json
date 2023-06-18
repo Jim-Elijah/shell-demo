@@ -1,0 +1,14 @@
+{
+  "name": "shell-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.js",
+  "scripts": {
+    "start": "node "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "progress": "^2.0.3"
+  }
+}
