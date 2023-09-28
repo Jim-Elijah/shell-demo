@@ -16,14 +16,22 @@ function basicShellCommand() {
 
 function longRunningCommand() {
   // start the `ping google.com` command
-  const command = spawn("ping", ["baidu.com", "-c 4"]);
+  const command = spawn("ping", ["baidu1.com", "-c 4"]);
   // const command = spawn('ping', ["google.com"])
 
   // the `data` event is fired every time data is
   // output from the command
   command.stdout.on("data", (output) => {
     // the output data is captured and printed in the callback
-    console.log("Output: ", output.toString());
+    console.log("Output: ", output.toString('utf-8'));
+  });
+  command.stderr.on('data',  (output) => {
+    // the output data is captured and printed in the callback
+    console.log("Output: ", output.toString('utf-8'));
+  });
+  command.err.on('data',  (output) => {
+    // the output data is captured and printed in the callback
+    console.log("Output: ", output.toString('utf-8'));
   });
 }
 
@@ -88,7 +96,7 @@ function findMs() {
 }
 
 // basicShellCommand()
-// longRunningCommand()
+longRunningCommand()
 // spawnStdin()
-findMs();
+// findMs();
 // kill()
